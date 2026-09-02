@@ -1,4 +1,6 @@
-﻿namespace Backend;
+﻿using System.Globalization;
+
+namespace Backend;
 
 public abstract class GeometricFigure
 {
@@ -24,7 +26,7 @@ public abstract class GeometricFigure
 
     public override string ToString()
     {
-        return $"{ Name,-14} => Area.....: { GetArea(),14:N5}     Perimeter: { GetPerimeter (),12:N5}\t";
+        return $"{Name,-15} => Area.....: {GetArea().ToString("N5", CultureInfo.InvariantCulture),14}      Perimeter: {GetPerimeter().ToString("N5", CultureInfo.InvariantCulture),14}\t";
     }
 
     //Private Methods
