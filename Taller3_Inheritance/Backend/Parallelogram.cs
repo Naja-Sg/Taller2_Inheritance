@@ -21,7 +21,7 @@ public class Parallelogram : Rectangle
     public double H 
     { 
         get => _h; 
-        set => _h = value; 
+        set => _h = ValidateH (value); 
     }
 
     //Public Methods
@@ -40,7 +40,7 @@ public class Parallelogram : Rectangle
 
     // Private methods
 
-    private decimal ValidateH(decimal h)
+    private double ValidateH(double h)
     {
         if (h < 0)
         {
