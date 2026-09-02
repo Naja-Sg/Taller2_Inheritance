@@ -9,10 +9,10 @@ public class Kite : Rhombus
 
     //Fields
 
-    private decimal _b;
+    private double _b;
 
     //Constructors
-    public Kite(string name, decimal a, decimal d1, decimal d2, decimal b) : base(name, a, d1, d2)
+    public Kite(string name, double a, double d1, double d2, double b) : base(name, a, d1, d2)
     {
         B = b;
     }
@@ -20,7 +20,7 @@ public class Kite : Rhombus
 
     //Properties
 
-    public decimal B 
+    public double B 
     {
         get => _b; 
         set => _b = ValidateB(value); 
@@ -28,21 +28,21 @@ public class Kite : Rhombus
 
     //Public Methods
 
-        public override decimal GetArea()
+        public override double GetArea()
     {
-        decimal area = (D1 *  D2)/2;
+        double area = (D1 *  D2)/2;
         return area;
     }
 
-    public override decimal GetPerimeter()
+    public override double GetPerimeter()
     {
-        decimal perimeter = 2 * (A+B);
+        double perimeter = 2 * (A+B);
         return perimeter;
     }
 
     //Private Methods
 
-    private decimal ValidateB(decimal b)
+    private double ValidateB(double b)
     {
         if (b < 0)
         {

@@ -5,21 +5,21 @@ public class Circle : GeometricFigure
 {
     //Fields
 
-    private decimal _r;
+    private double _r;
 
 
     //Constructors
 
-    public Circle(string name, decimal r)
+
+    public Circle (string name, double r) : base(name)
     {
-        Name = name;
-        R = r; //Generated constructor with Propertie instead of Field, as we'll be validating the propertie
+        R = r;
     }
 
 
     //Properties
 
-    public decimal R 
+    public double R 
     { 
         get => _r; 
         set => _r = ValidateR(value); 
@@ -27,22 +27,22 @@ public class Circle : GeometricFigure
 
 
     //Public methods
-    public override decimal GetArea()
+    public override double GetArea()
     {
-        decimal area = (decimal) Math.PI * (decimal) Math.Pow ((double)R, 2);// R is decimal, so I cast it to double for the Math.Pow to work, then the result is casted back to Decimal, and Match.PI too so I can multiply them
+        double area =  Math.PI *  Math.Pow ((double)R, 2);
         return area;
     }
 
-    public override decimal GetPerimeter()
+    public override double GetPerimeter()
     {
-        decimal perimeter = 2 * (decimal)Math.PI * R;
+        double perimeter = 2 * Math.PI * R;
         return perimeter;
     }
 
 
     //Private Methods
 
-    private decimal ValidateR (decimal radious)
+    private double ValidateR (double radious)
     {
         if (radious < 0)
         {

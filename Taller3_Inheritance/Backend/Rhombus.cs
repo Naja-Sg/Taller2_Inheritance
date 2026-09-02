@@ -8,11 +8,11 @@ public class Rhombus : Square
 {
     //Fields
 
-    private decimal _d1;
-    private decimal _d2;
+    private double _d1;
+    private double _d2;
 
     //Constructors
-    public Rhombus(string name, decimal a, decimal d1, decimal d2) : base(name, a)
+    public Rhombus(string name, double a, double d1, double d2) : base(name, a)
     {
         D1 = d1;
         D2 = d2;
@@ -21,12 +21,12 @@ public class Rhombus : Square
 
     //Properties
 
-    public decimal D1
+    public double D1
     {
         get => _d1;
         set => _d1 = ValidateD1(value);
     }
-    public decimal D2
+    public double D2
     {
         get => _d2;
         set => _d2 = ValidateD1(value);
@@ -34,21 +34,21 @@ public class Rhombus : Square
 
     //Public Methods
 
-    public override decimal GetArea()
+    public override double GetArea()
     {
-        decimal area = (D1 *  D2)/2;
+        double area = (D1 *  D2)/2;
         return area;
     }
 
-    public override decimal GetPerimeter()
+    public override double GetPerimeter()
     {
-        decimal perimeter = 4 * A;
+        double perimeter = 4 * A;
         return perimeter;
     }
 
     //Private Methods
 
-    private decimal ValidateD1(decimal d1)
+    private double ValidateD1(double d1)
     {
         if (d1 < 0)
         {

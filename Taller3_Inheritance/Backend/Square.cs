@@ -4,11 +4,11 @@ public class Square : GeometricFigure
 {
     //Fields
 
-    private decimal _a;
+    private double _a;
 
     //Constructors
 
-    public Square(string name, decimal a)
+    public Square(string name, double a) : base(name)
     {
         Name = name;
         A = a;
@@ -16,7 +16,7 @@ public class Square : GeometricFigure
 
     //Properties
 
-    public decimal A 
+    public double A 
     { 
         get => _a; 
         set => _a = ValidateA(value); 
@@ -25,20 +25,20 @@ public class Square : GeometricFigure
 
     //Public Methods
 
-    public override decimal GetArea()
+    public override double GetArea()
     {
-        decimal area = (decimal)Math.Pow((double) A, 2);
+        double area = Math.Pow((double) A, 2);
         return area;
     }
 
-    public override decimal GetPerimeter()
+    public override double GetPerimeter()
     {
-        decimal perimeter = 4 * A;
+        double perimeter = 4 * A;
         return perimeter;
     }
     //Private Methods
 
-    private decimal ValidateA(decimal a)
+    private double ValidateA(double a)
     {
         if (a < 0)
         {
